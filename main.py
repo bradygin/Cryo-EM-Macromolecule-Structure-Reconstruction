@@ -2,7 +2,7 @@ import os
 import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
-from cryo_em_processing import CryoEMProcessor
+from convergence_analysis import CryoEMProcessorWithTracking
 
 # Visualization control flags
 SHOW_REFERENCE = False
@@ -48,7 +48,7 @@ def process_images():
     
     # Process first set
     print("\nProcessing first set of 250 images...")
-    processor1 = CryoEMProcessor(reference_img)
+    processor1 = CryoEMProcessorWithTracking(reference_img)
     result1 = processor1.process_batch(set1, show_progress=SHOW_PROGRESS)
     
     if SHOW_SET1:
@@ -61,7 +61,7 @@ def process_images():
     
     # Process second set
     print("\nProcessing second set of 250 images...")
-    processor2 = CryoEMProcessor(reference_img)
+    processor2 = CryoEMProcessorWithTracking(reference_img)
     result2 = processor2.process_batch(set2, show_progress=SHOW_PROGRESS)
     
     if SHOW_SET2:
@@ -74,7 +74,7 @@ def process_images():
     
     # Final combination
     print("\nPerforming final combination...")
-    final_processor = CryoEMProcessor(result1)
+    final_processor = CryoEMProcessorWithTracking(result1)  # Changed to tracking version
     final_result = final_processor.process_batch([result2], show_progress=SHOW_PROGRESS)
     
     if SHOW_FINAL:
