@@ -69,7 +69,7 @@ class CryoEMProcessor:
         
         return aligned_img, correlation
     
-    def process_batch(self, images, correlation_threshold=0.5, show_progress=True):
+    def process_batch(self, images, correlation_threshold=0.8, show_progress=True):
         """Process a batch of images"""
         accepted_count = 0
         rejected_count = 0
