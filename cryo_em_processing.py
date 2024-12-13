@@ -13,9 +13,6 @@ class CryoEMProcessor:
         """
         Compute cross-correlation using FFT
         """
-        # Convert to float and normalize
-        # img1 = (img1 - np.mean(img1)) / np.std(img1)
-        # img2 = (img2 - np.mean(img2)) / np.std(img2)
         
         # Compute FFTs
         fft1 = fft.fft2(img1)
@@ -84,7 +81,7 @@ class CryoEMProcessor:
             # If correlation is good enough, update average
             if correlation > correlation_threshold:
                 self.update_average(aligned_img, len(self.aligned_images))
-                self.aligned_images.append(self.current_average)
+                self.aligned_images.append(aligned_img)
                 accepted_count += 1
             else:
                 rejected_count += 1
