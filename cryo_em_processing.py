@@ -51,7 +51,6 @@ class CryoEMProcessor:
     
     def update_average(self, new_img, img_count):
         """Update running weighted average"""
-        # weight = 1.0 / img_count
         self.current_average = (img_count / (img_count + 1))*self.current_average + (1 / (img_count + 1))*new_img
     
     def align_single_image(self, img, debug=False):
