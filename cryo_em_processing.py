@@ -72,7 +72,7 @@ class CryoEMProcessor:
         
         return aligned_img, correlation
     
-    def process_batch(self, images, correlation_threshold=0.5):
+    def process_batch(self, images, correlation_threshold=0.5, show_progress=True):
         """Process a batch of images"""
         accepted_count = 0
         rejected_count = 0
@@ -90,7 +90,7 @@ class CryoEMProcessor:
                 rejected_count += 1
             
             # Show progress every 50 images
-            if i % 50 == 0:
+            if show_progress and i % 50 == 0:
                 print(f"Processed {i} images. Accepted: {accepted_count}, Rejected: {rejected_count}")
                 plt.figure(figsize=(10, 4))
                 
