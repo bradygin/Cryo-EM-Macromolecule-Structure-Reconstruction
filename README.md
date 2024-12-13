@@ -76,16 +76,16 @@ if correlation > correlation_threshold:
 ## Results
 
 ### 1. Individual Set Processing
-![Result Set 1](assets/result_set1.png)
-![Result Set 2](assets/result_set2.png)
+![Result Set 1](result_set1.png)
+![Result Set 2](result_set2.png)
 
 The processing of each 250-image set produced consistent results, showing a clear ring structure and similar noise characteristics.
 
 ### 2. Progress
-![Algorithm Progress](assets/cryoFMvideo.mp4)
+[Short video of how the algorithm made progress](cryoFMvideo.mp4)
 
 ### 3. Final Combined Result
-![Final Result](assets/final_result.png)
+![Final Result](final_result.png)
 
 The final combination of both sets merged these two together and gave us a final reconstruction of the structure.
 
